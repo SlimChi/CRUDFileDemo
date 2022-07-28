@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="700" prefWidth="1000" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.cs.application.MenuController">
+   <top>
+      <MenuBar prefHeight="30.0" prefWidth="1000.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menuItemOuvrir" mnemonicParsing="false" onAction="#ouvrirFichiher" text="Ouvrir" />
+                  <MenuItem fx:id="menuItemNouveau" mnemonicParsing="false" onAction="#nouveauFichier" text="Nouveau" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuItemEnregistrer" mnemonicParsing="false" onAction="#enregistrerFichier" text="Enregistrer" />
+                  <MenuItem fx:id="menuItemEnregistrerSous" mnemonicParsing="false" onAction="#nouveauFichier" text="EnregistrerSous..." />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuItemFermer" mnemonicParsing="false" onAction="#fermerFichier" text="fermer" />
+                  <MenuItem fx:id="menuItemSQuitter" mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#help" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

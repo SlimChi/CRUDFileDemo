@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.cs.application.ContactController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TextField fx:id="recherche" layoutX="81.0" layoutY="58.0" prefHeight="25.0" prefWidth="366.0" />
+            <Label layoutX="13.0" layoutY="58.0" prefHeight="25.0" prefWidth="70.0" text="Recherche :" />
+            <TableView fx:id="tableContact" layoutX="32.0" layoutY="101.0" prefHeight="522.0" prefWidth="434.0">
+              <columns>
+                <TableColumn fx:id="nomColumn" prefWidth="91.0" text="Nom" />
+                <TableColumn fx:id="PrenomColumn" prefWidth="92.0" text="Prénom" />
+                  <TableColumn fx:id="NumTelColumn" prefWidth="121.0" text="Numéro de Tel " />
+              </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="smallAjouter" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
+                        <MenuItem fx:id="smallModifier" mnemonicParsing="false" onAction="#modifer" text="Modifier" />
+                        <MenuItem fx:id="smallSupprimer" mnemonicParsing="false" onAction="#supprimerContact" text="Supprimer" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+            <Button layoutX="83.0" layoutY="637.0" mnemonicParsing="false" onAction="#imprimer" text="Imprimer" />
+            <Button fx:id="ajouter" layoutX="326.0" layoutY="637.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="detailShow" minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="455.0">
+         <children>
+            <GridPane layoutX="77.0" layoutY="226.0" prefHeight="133.0" prefWidth="343.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="234.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="310.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="310.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="45.0" prefWidth="172.0" text="Nom :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="45.0" prefWidth="172.0" text="Prénom :" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="45.0" prefWidth="172.0" text="Numéro de Tel :" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="labelNom" prefHeight="39.0" prefWidth="194.0" GridPane.columnIndex="1" />
+                  <Label fx:id="labelPrenom" prefHeight="39.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="labelNumTel" prefHeight="39.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" layoutY="61.0" prefHeight="63.0" prefWidth="219.0" text="Détails" textAlignment="CENTER">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Button layoutX="129.0" layoutY="456.0" mnemonicParsing="false" onAction="#modifer" text="Modifier" />
+            <Button fx:id="supprimer" layoutX="322.0" layoutY="456.0" mnemonicParsing="false" onAction="#supprimerContact" text="Supprimer" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
